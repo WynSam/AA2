@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title> AA2 </title>
+		<style>
+			input{
+				margin: 10px;
+			}
+			label{
+				display: inline;
+				width: 140 px;
+				text-align: right;
+			}		
+		
+		</style>
+	</head>
+	<body>
+		<form onsubmit="return exportData();">
+		    <fieldset form="login">
+			<label for="Uname"> Name: </label>
+			<input type = "text" id="Uname" name="Uname" onblur="filled(this)"></br>
+			<label for="prefer"> Prefered Username: </label>
+			<input type= "text" id="prefer" onblur="filled(this)"></br>
+			<label for="gender"> Gender </label>
+			<select name="Sex" id="gender" onblur="filled(this)">
+			  <option value=" ">  </option>
+			  <option value="male"> Male </option>
+			  <option value="Female"> Female </option>
+			  <option value="other"> Prefer not to mention </option>
+			</select></br>
+			<label for="pass"> Password </label>
+			<input type="password" id="pass" name="pass" onblur="filled(this)"></br>
+			<label for="mail"> E-mail adress </label>
+			<input type="text" id="mail" name="mail" onblur="filled(this)"></br>
+			<label for="living"> Address </label>
+			<input type="text" id="living" name="living" onblur="filled(this)"></br>
+			<label for="hobby"> Your Interests: </label>
+			<input type="text" id="hobby" name="hobby" onblur="filled(this)"></br>
+			<input type="submit">
+		   </fieldset>
+		</form>
+		<script>
+			function filled(element){
+				var x = element.value;
+				if (x==""){
+					element.style.borderColor =  "red";
+				}
+				else{
+					element.style.borderColor = "blue";
+				}
+			}
+			function exportData(){
+				var name = document.getElementById("Uname").value;
+				var username = document.getElementById("prefer").value;
+				var gender = document.getElementById("gender").value;
+				var password = document.getElementById("pass").value;
+				var email = document.getElementById("mail").value;
+				var address = document.getElementById("living").value;
+				var interests = document.getElementById("hobby").value;
+				var output = "Name: " + name + "<br>" + "Preferred Username: " + username + "<br>" + "Gender: " + gender + "<br>" + "Password: " + password + "<br>" + "Email: " + email + "<br>" + "Address: " + address + "<br>" + "Interests: " + interests;
+				document.getElementById("outputing").innerHTML = output;
+				return false;		
+			}
+		</script>
+		<p id="outputing"> </p>
+	</body>
+</html>
