@@ -37,7 +37,7 @@
 			<label for="hobby"> Your Interests: </label>
 			<input type="text" id="hobby" name="hobby" onblur="filled(this)"></br>
 			<input type="submit">
-			<input type="reset" value="Reset">
+			<input type="reset" value="Reset" onclick="return resetForm();">
 		   </fieldset>
 		</form>
 		<script>
@@ -60,7 +60,17 @@
 				var interests = document.getElementById("hobby").value;
 				var output = "Name: " + name + "<br>" + "Preferred Username: " + username + "<br>" + "Gender: " + gender + "<br>" + "Password: " + password + "<br>" + "Email: " + email + "<br>" + "Address: " + address + "<br>" + "Interests: " + interests;
 				document.getElementById("outputing").innerHTML = output;
-				return false;		
+				return false;	
+			}	
+			function resetForm(){
+				document.getElementById("outputing").innerHTML = "";
+				document.getElementById("Uname").value = "";
+				document.getElementById("prefer").value = "";
+				document.getElementById("gender").value = "";
+				document.getElementById("pass").value = "";
+				document.getElementById("mail").value = "";
+				document.getElementById("living").value = "";
+				document.getElementById("hobby").value = "";
 			}
 		</script>
 		<p id="outputing"> </p>
